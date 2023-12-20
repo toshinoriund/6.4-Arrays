@@ -4,7 +4,7 @@ public class Algorithms
 {
     public void Printall(int[] ints)
     {
-        for(int i =0; i< ints.length -1; i++)
+        for(int i =0; i< ints.length; i++)
         {
             System.out.println(ints[i]);
 
