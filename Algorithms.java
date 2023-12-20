@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Algorithms
 {
     public void Printall(int[] ints)
@@ -75,7 +77,18 @@ public class Algorithms
 
     public int Largestabs(int[]ints, int[]ints2)
     {
+        int diff = 0;
+        int temp = 0;
+        for(int i=0; i<ints.length;i++)
+        {
+            temp = Math.abs(ints[i]-ints2[i]);
+            if (temp>diff)
+            {
+                diff = temp;
+            }
 
+        }
+        return diff;
     }
 
     public double Mean(double[]doubles)
@@ -87,6 +100,80 @@ public class Algorithms
         }
         return temp/ doubles.length;
     }
+    
+    public void Reverse(int[]ints)
+    {
+        int temp;
+        for(int i =0;i<ints.length/2;i++)
+        {
+            temp =ints[i];
+            ints[i]=ints[ints.length-1-i];
+            ints[ints.length-1-i]=temp;
+        }
+
+    }
+
+    public boolean Consecutive(int[]ints)
+    {
+        for(int i =0;i<ints.length-2;i++)
+        {
+            if(ints[i]==ints[i+1])
+            {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    public int Negative(int[]ints)
+    {
+        for(int i =0;i<ints.length-1;i++)
+        {
+            if (ints[i]<0)
+            {
+                return i;
+            }
+
+        }
+        return -1;
+
+    }
+
+    public boolean Equivalent(int[]ints)
+    {
+        for(int i =0;i<ints.length-1;i++)
+        {
+            for(int k =0;i<ints.length-1;k++)
+            {
+                if (ints[i]==ints[k])
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public int Streak(int[]ints,int a)
+    {
+        int count =0;
+        for(int i =0;i<ints.length-1;i++)
+        {
+            if (ints[i]==a)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public String Alphabetically(String[]strings)
+    {
+        Arrays.sort(strings);
+        return strings[strings.length-1];
+    }
+
 
 
 
